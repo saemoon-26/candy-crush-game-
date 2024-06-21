@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVEL-1</title>
+    <link rel="stylesheet" href="candy.css">
+</head>
+<style>
+  
+
+    body{
+    background: url("./background.jpg") no-repeat center center fixed;
+background-size: cover;
+font-family: Arial, Helvetica, sans-serif;
+color: white;
+text-align: center;
+}
+   
+</style>
+<body>
+    <div id="container">
+        <h2>TARGET</h2>
+     <h4>Score:200</h4>
+    </div>
+    <h3>LEVEL 1</h3>
+    <a href="index.html"> HOME </a>
+        <h1>score: <span id="score">0</span></h1>
+    <div id="board"></div>
+
+    <div class="button-group">
+        <a href="level1.html">
+            <button class="level-1">LEVEL 1</button>
+        </a>
+        <a href="level2.html">
+            <button class="level-2">LEVEL 2</button>
+        </a>
+        <a href="level3.html">
+            <button class="level-3">LEVEL 3</button>
+        </a>
+    </div>
+    <script src="level1.js"></script>
+    <script>
+        window.onload = initGame;
+
+    </script>
+</body>
+</html>

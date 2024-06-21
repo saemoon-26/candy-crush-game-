@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVEL-3</title>
+    <link rel="stylesheet" href="candy.css">
+    <style>
+        body{
+    background: url("./background.jpg") no-repeat center center fixed;
+background-size: cover;
+font-family: Arial, Helvetica, sans-serif;
+color: white;
+text-align: center;
+}
+        
+    </style>
+</head>
+<body>
+    <h3>LEVEL 3</h3>
+    <a href="index.html"> HOME </a>
+     <div id="container">
+        <h2>TARGET</h2>
+        <h4>200 scores at 10 moves</h4>
+     </div>
+        <h1>score: <span id="score">0</span></h1>
+        <div id="gameInfo">
+            <p> Moves left: <span id="movesLeft" onclick="crushCandy()">10</span></p>
+                </div>
+     <div class="container" id="board">
+
+     </div>         
+     <div class="button-group">
+        <a href="level1.html">
+            <button class="level-1">LEVEL 1</button>
+        </a>
+        <a href="level2.html">
+            <button class="level-2">LEVEL 2</button>
+        </a>
+        <a href="level3.html">
+            <button class="level-3">LEVEL 3</button>
+        </a>
+    </div>
+<script>
+        document.addEventListener("DOMContentLoaded", () =>{
+            const TOTAL_MOVES = 10;
+            let movesLeftDisplay= document.getElementById('movesLeft');
+            let movesLeft=TOTAL_MOVES;
+
+            function updateMovesLeftDisplay() {
+                movesLeftDisplay.textContent = movesLeft;
+            }
+
+            function checkWinCondition(){
+                if (score == 200) {
+                    alert ("congratulations! you've reached the target score.");
+            location.reload();
+
+                } else if (movesLeft === 0 && score <= 200) {
+                    alert ("Game over. you didn't reach the target score.");
+            location.reload();
+
+                }
+            }
+            updateMovesLeftDisplay();
+            checkWinCondition();
+
+            document.addEventListener('drop',() => {
+                if (movesLeft > 0){
+                    movesLeft--;
+                    updateMovesLeftDisplay();
+                    checkWinCondition();
+                }
+            });
+        });
+    </script>
+    <script src="levels.js"></script>
+</body>
+</html>

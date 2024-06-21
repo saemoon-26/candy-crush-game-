@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEVEL-2</title>
+    <link rel="stylesheet" href="candy.css">
+</head>
+<style>
+
+    body{
+    background: url("./background.jpg") no-repeat center center fixed;
+background-size: cover;
+font-family: Arial, Helvetica, sans-serif;
+color: white;
+text-align: center;
+}
+  
+</style>
+<body>
+    <div id="container">
+        <h2>TARGET</h2>
+        <h4>200 score in <br> 30 seconds</h4>
+         </div>
+<div id="timer" 
+     style="
+     background-color:rgb(7, 69, 111);
+     top: 20px;
+     right: 20px;
+     width: 100px;
+     height:  100px;
+     flex-shrink: 0;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     position: fixed;
+    ">
+      30
+
+ </style>
+ 
+
+</div>
+<h3>LEVEL 2</h3>
+ <a href="index.html"> HOME </a>
+ <h1>score: <span id="score">0</span></h1>
+<div id="board"></div>
+
+<div class="button-group">
+ <a href="level1.html">
+     <button class="level-1">LEVEL 1</button>
+ </a>
+ <a href="level2.html">
+     <button class="level-2">LEVEL 2</button>
+ </a>
+ <a href="level3.html">
+     <button class="level-3">LEVEL 3</button>
+ </a>
+</div>
+<script src="levels.js"></script>
+<script>
+    startTimer();
+    clearInterval();
+var targetScore=200;
+    function startTimer(){
+        var timer=document.getElementById("timer");
+        var timeLeft=30;
+        var timeInterval= setInterval(function(){
+            timeLeft--;
+            timer.innerHTML = timeLeft + "seconds";
+            if (timeLeft === 0){
+                clearInterval(timeInterval);
+                timer.innerHTML = "Time's up!";
+                alert("better luck next time!");
+                location.reload();
+            }
+            if(score>= targetScore){
+                clearInterval(timeInterval);
+                alert(" CONGRATULATIONS! You acheive the target of 200 scores");
+                targetScore += 200;
+
+                location.reload();
+                score=0;
+
+
+            }
+        }, 1000);
+    }
+</script>
+</body>
+</html>
